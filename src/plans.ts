@@ -1,0 +1,1 @@
+export const ALL_PLANS = ["JOBHUNTING", "PROGRAMMING", "COMMUNITY", "UNLIMITED", "FREE"] as const;

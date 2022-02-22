@@ -1,0 +1,42 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /contents/{doc} {
+      allow read: if
+          checkAuthentication() &&
+          (("plan" in request.auth.token) || "FREE" in resource.data.plans) &&
+          (!("plan" in request.auth.token && request.auth.token.plan == "UNLIMITED") || ("FREE" in resource.data.plans || "PROGRAMMING" in resource.data.plans || "JOBHUNTING" in resource.data.plans)) &&
+          (!("plan" in request.auth.token && request.auth.token.plan == "COMMUNITY") || "FREE" in resource.data.plans) &&
+          (!("plan" in request.auth.token && request.auth.token.plan != "UNLIMITED" && request.auth.token.plan != "COMMUNITY" && request.auth.token.plan != null)
+          || request.auth.token.plan in resource.data.plans || "FREE" in resource.data.plans);
+    }
+
+    match /movies/{doc} {
+      allow read: if
+          checkAuthentication() &&
+          (("plan" in request.auth.token) || "FREE" in resource.data.plans) &&
+          (!("plan" in request.auth.token && request.auth.token.plan == "UNLIMITED") || ("FREE" in resource.data.plans || "PROGRAMMING" in resource.data.plans || "JOBHUNTING" in resource.data.plans)) &&
+          (!("plan" in request.auth.token && request.auth.token.plan == "COMMUNITY") || "FREE" in resource.data.plans) &&
+          (!("plan" in request.auth.token && request.auth.token.plan != "UNLIMITED" && request.auth.token.plan != "COMMUNITY" && request.auth.token.plan != null)
+          || request.auth.token.plan in resource.data.plans || "FREE" in resource.data.plans);
+    }
+
+    match /progress/{uid} {
+      allow create, get, update: if
+          checkAuthentication() && isOwnDocument(uid);
+    }
+
+    match /users/{uid} {
+      allow create, update: if
+          checkAuthentication() && isOwnDocument(uid);
+      allow read: if true;
+    }
+  }
+
+  function checkAuthentication() {
+    return request.auth != null;
+  }
+  function isOwnDocument(documentId) {
+    return request.auth.uid == documentId;
+  }
+}

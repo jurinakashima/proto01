@@ -1,0 +1,30 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /users/pics/{id} {
+      allow write: if checkAuthentication() && isOwnDocument(id);
+    }
+    match /users/{file=**} {
+      allow read: if true;
+    }
+    match /courses/programming/{pdf} {
+      allow read : if checkAuthentication() && (request.auth.token.plan == "UNLIMITED" || request.auth.token.plan == "PROGRAMMING");
+    }
+    match /courses/jobhunting/{pdf} {
+      allow read : if checkAuthentication() && (request.auth.token.plan == "UNLIMITED" || request.auth.token.plan == "JOBHUNTING");
+    }
+    match /courses/free/{pdf} {
+      allow read : if checkAuthentication();
+    }
+    match /constitution.pdf {
+      allow read : if true;
+    }
+  }
+
+  function checkAuthentication() {
+    return request.auth != null;
+  }
+  function isOwnDocument(documentId) {
+    return request.auth.uid == documentId;
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "contents" : [
+    {
+      "title":"はじめに",
+      "details":[
+        {
+          "link":"/courses/programming/000026829.pdf",
+          "title":"プログラミングコース -はじめに-1 "
+        },
+        {
+          "link":"#",
+          "title":"プログラミングコース -はじめに-2"
+        }
+      ],
+      "text":"サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト",
+      "plans":["FREE","PROGRAMMING"],
+      "estimate":-1
+    },
+    {
+      "title":"HTML/CSS中級",
+      "details":[
+        {
+          "link":"/courses/programming/000026829.pdf",
+          "title":"プログラミングコース -はじめに-1 "
+        },
+        {
+          "link":"#",
+          "title":"プログラミングコース -はじめに-2"
+        }
+      ],
+      "text":"サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト",
+      "plans":["PROGRAMMING"],
+      "estimate":100
+    },
+    {
+      "title":"HTML/CSS基礎",
+      "details":[
+        {
+          "link":"/courses/programming/000026829.pdf",
+          "title":"プログラミングコース -はじめに-1 "
+        },
+        {
+          "link":"#",
+          "title":"プログラミングコース -はじめに-2"
+        }
+      ],
+      "text":"サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト",
+      "plans":["PROGRAMMING"],
+      "estimate":50
+    },
+    {
+      "title":"JavaScript基礎",
+      "details":[
+        {
+          "link":"/courses/programming/000026829.pdf",
+          "title":"プログラミングコース -はじめに-1 "
+        },
+        {
+          "link":"#",
+          "title":"プログラミングコース -はじめに-2"
+        }
+      ],
+      "text":"サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト",
+      "plans":["JOBHUNTING"],
+      "estimate":28
+    }
+  ],
+  "movies": [
+    {
+      "link":"lbyoScWe318",
+      "plans":["PROGRAMMING","FREE"],
+      "categories":["test","programming"],
+      "title":"test1"
+    },
+    {
+      "link":"lbyoScWe318",
+      "plans":["PROGRAMMING","FREE"],
+      "categories":["test2", "dummy"],
+      "title":"test2"
+    },
+    {
+      "link":"lbyoScWe318",
+      "plans":["PROGRAMMING","FREE"],
+      "categories":["test3", "dummy3"],
+      "title":"test3"
+    },
+    {
+      "link":"lbyoScWe318",
+      "plans":["PROGRAMMING","FREE"],
+      "categories":["test4", "dummy2"],
+      "title":"test4"
+    },
+    {
+      "link":"lbyoScWe318",
+      "plans":["PROGRAMMING","FREE"],
+      "categories":["test5", "dummy6"],
+      "title":"test5"
+    },
+    {
+      "link":"lbyoScWe318",
+      "plans":["PROGRAMMING","FREE"],
+      "categories":["test", "dummy7"],
+      "title":"test6"
+    }
+  ]
+}
